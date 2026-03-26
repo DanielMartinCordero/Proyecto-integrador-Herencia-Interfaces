@@ -1,4 +1,4 @@
-package personajes;
+package Entidades;
 
 import interfaces.Paladin;
 

@@ -1,6 +1,6 @@
 package interfaces;
 
-import personajes.Personaje;
+import Entidades.Personaje;
 
 public interface Atacar {
     void ataque(Personaje objetivo);

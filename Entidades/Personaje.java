@@ -1,4 +1,4 @@
-package personajes;
+package Entidades;
 
 public abstract class Personaje {
     protected String nombre;
@@ -15,35 +15,39 @@ public abstract class Personaje {
         this.salud = 100.00;
     }
     public void recibirDaño(double cantidadRecibida){
-        if(salud >= cantidadRecibida){
-            salud -= cantidadRecibida;
+        if(getSalud() >= cantidadRecibida){
+            setSalud(getSalud() - cantidadRecibida);
             System.out.println("Daño recibido: "+cantidadRecibida);
-            System.out.println("Salud actual: "+salud);
+            System.out.println("Salud actual: "+getSalud());
         }
         else{
-            System.out.println("Daño recibido: "+salud);
-            salud = 0;
-            System.out.println("Salud actual: "+salud);
+            System.out.println("Daño recibido: "+getSalud());
+            setSalud(0.00);
+            System.out.println("Salud actual: "+getSalud());
         }
     }
     public abstract void gritoBatalla();
 
+    public void subirNivelActual(double nivelesAñadidos){
+        setNivelActual(getNivelActual() + nivelesAñadidos);
+    }
+
     public String getNombre() {
         return nombre;
     }
-    public void setNombre(String nombre) {
+    protected void setNombre(String nombre) {
         this.nombre = nombre;
     }
     public double getNivelActual() {
         return nivelActual;
     }
-    public void setNivelActual(double nivelActual) {
+    protected void setNivelActual(double nivelActual) {
         this.nivelActual = nivelActual;
     }
     public double getSalud() {
         return salud;
     }
-    public void setSalud(double salud) {
+    protected void setSalud(double salud) {
         this.salud = salud;
     }
 }
